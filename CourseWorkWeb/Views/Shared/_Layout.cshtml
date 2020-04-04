@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CourseWorkWeb</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
 </head>
 <body>
     <header>
@@ -24,15 +24,19 @@
                     Technicians
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Authorization</a>
+            </li>
         </ul>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <br />
             @RenderBody()
         </main>
     </div>
     <footer class="modal-footer">
-       
+        <p>Created by: Laysan & Eugene</p>
     </footer>
 
     
