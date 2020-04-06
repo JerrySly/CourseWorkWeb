@@ -1,0 +1,26 @@
+﻿#reg{
+    color:white;
+    text-align:right;
+}
+h2{
+    text-align:left;
+    color:white;
+}
+.form-box{
+    padding:10px;
+    align-content:center;
+    position:absolute;
+    width:30%;
+    height:50%;
+    top:25%;
+    left:35%;
+    background-color:black;
+    border-radius:10px;
+}
+label{
+    margin-right:10px;
+    color:white;
+}
+.btn{
+    background-color:white;
+}

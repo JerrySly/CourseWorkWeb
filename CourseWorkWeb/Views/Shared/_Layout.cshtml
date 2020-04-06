@@ -11,13 +11,13 @@
     <header>
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link " asp-controller="Home" asp-action="Index">General</a>
+                <h2 class="navbar-brand " >Фитнес в условии ЧС</h2>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Blog" asp-action="Index">OurBlog</a>
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Главная</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Contact" asp-action="Index">Contacts</a>
+                <a class="nav-link" asp-controller="Contact" asp-action="Index">Каталог упражнений</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" asp-controller="Technicians" asp-action="Index">
@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Authorization</a>
+                <a class="nav-link" asp-controller="Authorization" asp-action="Index">Авторизация/Регистрация</a>
             </li>
         </ul>
     </header>
@@ -35,9 +35,6 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="modal-footer">
-        <p>Created by: Laysan & Eugene</p>
-    </footer>
 
     
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
