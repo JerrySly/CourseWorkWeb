@@ -16,15 +16,28 @@ namespace CourseWorkWeb.Controllers
         {
             _db = context;
         }
+  
         public IActionResult Index()
         {
             return View();
         }
-       /*public  async Task<IActionResult> Index()
+        [HttpPost]
+        public  IActionResult Index(string Login,string Password)
         {
-            return View( await _db.Users.ToListAsync());
-        }*/
-     
+            bool isRegistred = false;
+            foreach (User user in _db.Users)
+            {
+                if (user.Login == Login && user.Password == Password)
+                {
+                    isRegistred = true;
+                    break;
+                }
+            }
+            if (isRegistred) return Redirect("/General");
+            return RedirectToAction("Index");
+
+        }
+
         public IActionResult Registred()
         {
             return View();
@@ -35,7 +48,6 @@ namespace CourseWorkWeb.Controllers
             _db.Users.Add(user);
             await _db.SaveChangesAsync();
             return  RedirectToAction("Index");
-
         }
     }
 }

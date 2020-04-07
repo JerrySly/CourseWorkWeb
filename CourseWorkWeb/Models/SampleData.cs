@@ -16,7 +16,6 @@ namespace CourseWorkWeb.Models
                 context.Exercises.AddRange(
                     new Exercise
                     {
-                        Id = 1,
                         Name = "Отжимания",
                         ShortDesc = "Отжимания от пола",
                         Instruction = "Исходное положение – упор лежа. Согнуть руки в локтях, " +
@@ -30,7 +29,6 @@ namespace CourseWorkWeb.Models
                     },
                    new Exercise
                    {
-                       Id = 2,
                        Name = "Махи ногами",
                        ShortDesc = "Махи ногами вперёд",
                        Instruction = "Исходное положение стоя. Махи ногами с вытягиванием рук вперед " +
@@ -42,7 +40,6 @@ namespace CourseWorkWeb.Models
                    },
                    new Exercise
                    {
-                       Id = 3,
                        Name = "Наклоны с гантелями",
                        ShortDesc = "Наклон туловища с гантелями вперёд",
                        Instruction = "Исходное положение – ноги врозь. С выдохом наклониться вперед, со вздохом вернуться в исходное положение. Колени не сгибать.",

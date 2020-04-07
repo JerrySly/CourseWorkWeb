@@ -1,26 +1,18 @@
 ﻿#reg{
-    color:white;
+    color:black;
     text-align:right;
 }
-h2{
-    text-align:left;
-    color:white;
+.form-group h2 {
+    text-align: left;
+    color: black;
+    width: auto;
 }
-.form-box{
-    padding:10px;
-    align-content:center;
-    position:absolute;
-    width:30%;
-    height:50%;
-    top:25%;
-    left:35%;
-    background-color:black;
-    border-radius:10px;
-}
+
 label{
     margin-right:10px;
-    color:white;
+    color:black;
 }
 .btn{
-    background-color:white;
+    background-color:black;
+    color:white;
 }
