@@ -11,17 +11,18 @@ namespace CourseWorkWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        ApplicationContext db;
+        public HomeController(ApplicationContext context)
         {
-            _logger = logger;
+            db = context;
         }
-
         public IActionResult Index()
         {
-            return View();
+            return View(db.Exercises.ToList());
         }
-
     }
 }
+
+
+
+

@@ -8,6 +8,7 @@ namespace CourseWorkWeb.Models
 {
     public class ApplicationContext:DbContext
     {
+        public DbSet<Exercise> Exercises { get; set; }
         public DbSet<User> Users { get; set; }
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
