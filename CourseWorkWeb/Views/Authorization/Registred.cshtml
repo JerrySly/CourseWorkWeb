@@ -1,31 +1,20 @@
 ﻿@model CourseWorkWeb.Models.User
-<head>
-    <link href="~/css/Registred.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="form-box">
-        <form action="Registred" method="post">
-            <h2>Регистрация</h2>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Login</label>
-                <div class="col-sm-10">
-                    <input type="text" asp-for="Login" class="form-control" id="inputPassword" value="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" asp-for="Password" class="form-control" id="inputPassword">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="text" asp-for="Email" class="form-control" id="inputPassword">
-                </div>
-            </div>
-            <input type="submit" class="btn" value="Зарегистрироваться" />
+
+    <body>
+        <link href="~/css/NewRegistred.css" rel="stylesheet" />
+
+        <form class="form-signin" method="post">
+            <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
+            <label for="inputEmail" class="sr-only">Login</label>
+            <input name="Login" asp-for="Login" type="text" id="inputEmail" class="form-control" placeholder="Login" required="" autofocus="">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input asp-for="Password" name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input asp-for="Email" name="Email" type="text" id="inputEmail" class="form-control" placeholder="example@mail.com" required="">
+            <br />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Regestration</button>
+            <br />
 
         </form>
-    </div>
-</body>
+
+    </body>
