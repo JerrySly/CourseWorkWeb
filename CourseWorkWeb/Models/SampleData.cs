@@ -16,13 +16,13 @@ namespace CourseWorkWeb.Models
                 context.Exercises.AddRange(
                     new Exercise
                     {
-                        Id = 1,
+                        
                         Name = "Отжимания",
-                        ShortDesc = "Отжимания от пола",
+                        ShortDesc = "Отжимания от пола.....",
                         Instruction = "Исходное положение – упор лежа. Согнуть руки в локтях, " +
                         "опустив при этом тело до параллели с полом, после чего, напрягая тело, " +
                         "медленно разогнуть руки, вернувшись в исходное положение.",
-                        Img = "https://avatars.mds.yandex.net/get-zen_doc/1540250/pub_5d8621136d29c100addda47a_5d86250b04af1f00ad9d03dc/scale_1200",
+                        Img = "/pic/DSC_0100.jpg",
                         IsFavourite = false,
                         Level = 0.2,
 
@@ -30,23 +30,23 @@ namespace CourseWorkWeb.Models
                     },
                    new Exercise
                    {
-                       Id = 2,
+                       
                        Name = "Махи ногами",
                        ShortDesc = "Махи ногами вперёд",
                        Instruction = "Исходное положение стоя. Махи ногами с вытягиванием рук вперед " +
                         "(попеременно) и касанием носком кончика ладоней.",
-                       Img = "https://24smi.org/public/media/resize/800x-/person/2018/05/17/ntqzdkjv4kaw-dasha-vasnetsova.jpeg",
+                       Img = "/pic/DSC_0088.jpg",
                        IsFavourite = false,
                        Level = 0.2,
 
                    },
                    new Exercise
                    {
-                       Id = 3,
+                       
                        Name = "Наклоны с гантелями",
                        ShortDesc = "Наклон туловища с гантелями вперёд",
                        Instruction = "Исходное положение – ноги врозь. С выдохом наклониться вперед, со вздохом вернуться в исходное положение. Колени не сгибать.",
-                       Img = "https://www.rutv.net/static/papiny-dochki/2-sezon/4-seriya-kadr-5.jpg",
+                       Img = "/pic/DSC_0085.jpg",
                        IsFavourite = false,
                        Level = 0.2,
 

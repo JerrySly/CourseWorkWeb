@@ -1,38 +1,39 @@
-﻿@using CourseWorkWeb.Models
+﻿@using CourseWorkWeb.Models;
 @model IEnumerable<CourseWorkWeb.Models.Exercise>
-<head>
-    <link href="~/css/GenPage.css" rel="stylesheet" />
-</head>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="~/pic/1.png" class="d-block w-100" alt="...">
+@*
+    <head>
+        <link href="~/css/GenPage.css" rel="stylesheet" />
+    </head>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/pic/1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/pic/1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/pic/1.png" class="d-block w-100" alt="...">
+            </div>
         </div>
-        <div class="carousel-item">
-            <img src="~/pic/1.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="~/pic/1.png" class="d-block w-100" alt="...">
-        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-<br />
-<div class="card-columns">
-    @foreach (var exercise in Model)
-    {
-    <div class="card">
-        <div class="card-img">
-            <img class="card-img" src="@exercise.Img" alt="@exercise.Name">
-        </div>
-    </div>
+    <br />
+    <div class="card-columns">
+        @foreach (var exercise in Model)
+        {
+            <div class="card">
+                <div class="card-img">
+                    <img class="card-img" src="@exercise.Img" alt="@exercise.Name">
+                </div>
+            </div>
             <div class="card-body">
                 <h5 class="card-title">@exercise.Name</h5>
             </div>
@@ -42,7 +43,67 @@
                         More Info
                     </button>
                 </small>
-            </div>  
-    }
-</div>
+            </div>
+        }
+    </div>*@
+<html>
+<body>
+    <main role="main">
 
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Album example</h1>
+                <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+                <p>
+                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    @foreach (var exercise in Model)
+                    {
+                        <div class="col-md-4">
+
+                            <div class="card mb-4 shadow-sm">
+                                <img class="card-img" src="@exercise.Img" alt="@exercise.Name">
+
+                                <div class="card-body">
+                                    <p class="card-text">@exercise.ShortDesc</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <td><a href="~/Home/Show/@exercise.Id">Купить</a></td>
+                                            @*<form action="/Home/Show/@exercise.Id">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                            </form>*@
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        </div>
+                                        <small class="text-muted">9 mins</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>New to Bootstrap? <a href="https://getbootstrap.com/">Gospodi, chto za govno</a> or read our <a href="/docs/4.4/getting-started/introduction/">Ya ustala!!!</a>.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+</body>
+</html>

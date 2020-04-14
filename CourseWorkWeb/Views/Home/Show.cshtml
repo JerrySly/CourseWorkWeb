@@ -1,0 +1,46 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Упражнение</title>
+</head>
+<body>
+    <div>
+        <h3>Выбранное упражнение</h3>
+        
+        <form method="post">
+            <center>
+                <div class="album py-6 bg-light">
+                    <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                @*<h2>@ViewBag.exerciseId</h2>*@
+                                <div class="card mb-5 shadow-sm">
+                                    <div class="card-body">
+                                        <h3></h3><div class="card-title">@ViewBag.exerciseName</div></h3>
+                                        <img class="card-img" src="@ViewBag.exerciseImg" alt="@ViewBag.exerciseName">
+
+
+                                        <p class="card-text">@ViewBag.exerciseInstruction</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            </div>
+                                            <small class="text-muted"></small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </form>
+    </div>
+</body>
+</html>
