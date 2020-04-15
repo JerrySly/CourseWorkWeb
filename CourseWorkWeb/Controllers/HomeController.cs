@@ -32,6 +32,7 @@ namespace CourseWorkWeb.Controllers
             ViewBag.exerciseInstruction = ex.Instruction;
             ViewBag.exerciseImg = ex.Img;
             ViewBag.exerciseLevel = ex.Level;
+            ViewBag.exerciseShortDesc = ex.ShortDesc;
             return View();
         }
         [HttpPost]
