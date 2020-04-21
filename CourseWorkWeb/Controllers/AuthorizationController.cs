@@ -16,12 +16,13 @@ namespace CourseWorkWeb.Controllers
         {
             _db = context;
         }
-  
+        [Route("Authorization")]
         public IActionResult Index()
         {
             return View();
         }
         [HttpPost]
+        [Route("Authorization")]
         public  IActionResult Index(string Login,string Password)
         {
             bool isRegistred = false;
@@ -33,16 +34,17 @@ namespace CourseWorkWeb.Controllers
                     break;
                 }
             }
-            if (isRegistred) return Redirect("/General");
+            if (isRegistred) return Redirect("Home/Index");
             return RedirectToAction("Index");
 
         }
-
+        [Route("Registration")]
         public IActionResult Registred()
         {
             return View();
         }
         [HttpPost]
+        [Route("Registration")]
         public async  Task<IActionResult> Registred(User user)
         {
             _db.Users.Add(user);

@@ -16,6 +16,7 @@ namespace CourseWorkWeb.Controllers
         {
             db = context;
         }
+        
         public IActionResult Index()
         {
             return View(db.Exercises.ToList());
@@ -23,7 +24,7 @@ namespace CourseWorkWeb.Controllers
         
         [HttpGet]
         public IActionResult Show(int? id)
-        {
+        {   
             if (id == null) return RedirectToAction("Index");
             List<Exercise> exercises = new List<Exercise>();
             Exercise ex = db.Exercises.FirstOrDefault(s => s.Id == id);
