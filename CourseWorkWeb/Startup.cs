@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using CourseWorkWeb.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,13 +54,20 @@ namespace CourseWorkWeb
             app.UseRouting();
 
             app.UseAuthorization();
-
+            var myRouteHandler = new RouteHandler(Handler);
+            var routeBuilder = new RouteBuilder(app, myRouteHandler);
+            routeBuilder.MapRoute("default", "Home/Index/NextPage");
+            app.UseRouter(routeBuilder.Build());
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+        private async Task Handler(HttpContext context)
+        {
+            await context.Response.WriteAsync("Page don't work");
         }
     }
 }
