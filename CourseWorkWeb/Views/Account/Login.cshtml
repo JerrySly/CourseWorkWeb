@@ -1,6 +1,4 @@
-﻿
- 
-    <body>
+﻿@*<body>
         <link href="~/css/NewAuthorization.css" rel="stylesheet" />
             <form class="form-signin" method="post">
                 <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
@@ -13,4 +11,29 @@
                 <br />
                 <h5><a id="reg" asp-controller="Authorization" asp-action="Registred">Регистрация...</a></h5>
             </form>
-    </body>
+    </body>*@
+@model CourseWorkWeb.ViewModels.LoginViewModel
+
+<h2>Вход в приложение</h2>
+<form method="post" asp-controller="Account" asp-action="Login"
+      asp-route-returnUrl="@Model.ReturnUrl">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label><br />
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="RememberMe"></label><br />
+        <input asp-for="RememberMe" />
+    </div>
+    <div>
+        <input type="submit" value="Войти" />
+    </div>
+    <a id="reg" asp-controller="Account" asp-action="Register">Регистрация...</a>
+</form>
