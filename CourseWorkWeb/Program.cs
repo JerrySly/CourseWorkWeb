@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CourseWorkWeb.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,6 +23,8 @@ namespace CourseWorkWeb
 
                 try
                 {
+                    var userManager = services.GetRequiredService<UserManager<User>>();
+                    var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     var context = services.GetRequiredService<ApplicationContext>();
                     SampleData.Initialize(context);
                 }

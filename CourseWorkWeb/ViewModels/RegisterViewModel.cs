@@ -10,15 +10,17 @@ namespace CourseWorkWeb.ViewModels
     {
         [Required]
         [Display(Name = "Email")]
+        [RegularExpression(@"^[a-zA-Z0-9_.+-?!]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", ErrorMessage = "Некорректный адрес")]
         public string Email { get; set; }
 
         [Required]
         [Display(Name = "Login")]
         public string Login { get; set; }
-
+        
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
+        [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^_])(?!.*\s).{6,15})", ErrorMessage = "Некорректный пароль. Длина от 6 до 15. Пароль должен содержать цифры, буквы разного регистра, символ из @#$%^_")]
         public string Password { get; set; }
 
         [Required]
