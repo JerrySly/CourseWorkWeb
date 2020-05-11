@@ -41,6 +41,9 @@ namespace CourseWorkWeb
                 .AddEntityFrameworkStores<ApplicationContext>();
 
             services.AddControllersWithViews();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,9 +61,8 @@ namespace CourseWorkWeb
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthentication();    // подключение аутентификации
             app.UseAuthorization();
             var myRouteHandler = new RouteHandler(Handler);
@@ -69,6 +71,7 @@ namespace CourseWorkWeb
             app.UseRouter(routeBuilder.Build());
             app.UseEndpoints(endpoints =>
             {
+                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
