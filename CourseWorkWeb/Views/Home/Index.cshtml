@@ -4,13 +4,13 @@
  @*пытаемся вызвать Вьюбэг.
 Он должен выводить время последнего захода пользователя, если не в первый раз авторизуется*@
 <h1>@ViewBag.Message</h1>
-@if (string.IsNullOrEmpty(ViewBag.LTLD))
+@if (string.IsNullOrEmpty(TempData["LTLD"] as string))
 {
     <p>First time?</p>
 }
 else
 {
-    <p>Last Logged on @ViewBag.LTLD</p>
+<p>Last Logged on @TempData["LTLD"]</p>
 }
 
 @if (User.Identity.IsAuthenticated)

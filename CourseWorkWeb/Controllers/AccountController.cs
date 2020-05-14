@@ -56,7 +56,7 @@ namespace CourseWorkWeb.Controllers
             // проверяем на наличие и добавляем во Вьюбэг инфу
             if (Request.Cookies["LastLoggedInTime"] != null)
             {
-                ViewBag.LTLD = Request.Cookies["LastLoggedInTime"].ToString();
+                TempData["LTLD"]= Request.Cookies["LastLoggedInTime"].ToString();
             }
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
@@ -74,10 +74,13 @@ namespace CourseWorkWeb.Controllers
                     // проверяем, принадлежит ли URL приложению
                     if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                     {
+                        
                         return Redirect(model.ReturnUrl);
                     }
                     else
                     {
+                        // сохраняем куки со временем последнего захода
+                        Response.Cookies.Append("LastLoggedInTime", DateTime.Now.ToString());
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -86,8 +89,8 @@ namespace CourseWorkWeb.Controllers
                     ModelState.AddModelError("", "Неправильный логин и (или) пароль");
                 }
             }
-            // сохраняем куки со временем последнего захода
-            Response.Cookies.Append("LastLoggedInTime", DateTime.Now.ToString());
+            
+           
 
             return View(model);
         }
