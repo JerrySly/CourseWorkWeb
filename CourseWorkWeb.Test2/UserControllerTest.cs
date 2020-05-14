@@ -8,25 +8,33 @@ using CourseWorkWeb.Models;
 using CourseWorkWeb.Controllers;
 using CourseWorkWeb.ViewModels;
 using CustomIdentityApp.Controllers;
-using Microsoft.EntityFrameworkCore;
+
 using Microsoft.AspNetCore.Identity;
-using System.Linq;
 using System.Threading.Tasks;
+using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
+using Xunit.Sdk;
+using Microsoft.AspNetCore.Http;
+
 namespace CourseWorkWeb.Test2
 {
     public class UserControllerTest
     {
         [Fact]
-        public void EditUserTest()
+        public async Task EditUserTest()
         {
-            var storeMock = new Mock<IUserStore<User>>();
-            var optionMock = new Mock<IdentityOptions>();
-            var mock = new Mock<UserManager<User>>(storeMock.Object,optionMock.Object);
-            UsersController controller = new UsersController(mock.Object);
+            var moq = GetMockUserManager();
+            UsersController controller = new UsersController(moq.Object);
 
-            Task<IActionResult> result = controller.Edit("999");
+           var result =await controller.Edit("-100");
 
-            Assert.True( new NotFoundResult().Equals(result));
+           Assert.IsType<NotFoundResult>(result);      
         }
+        private Mock<UserManager<User>> GetMockUserManager()
+        {
+            var userStoreMock = new Mock<IUserStore<User>>();
+            return new Mock<UserManager<User>>(
+                userStoreMock.Object, null, null, null, null, null, null, null, null);
+        }
+      
     }
 }
