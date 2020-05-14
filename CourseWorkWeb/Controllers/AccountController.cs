@@ -53,6 +53,11 @@ namespace CourseWorkWeb.Controllers
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
+            // проверяем на наличие и добавляем во Вьюбэг инфу
+            if (Request.Cookies["LastLoggedInTime"] != null)
+            {
+                ViewBag.LTLD = Request.Cookies["LastLoggedInTime"].ToString();
+            }
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
 
@@ -81,6 +86,9 @@ namespace CourseWorkWeb.Controllers
                     ModelState.AddModelError("", "Неправильный логин и (или) пароль");
                 }
             }
+            // сохраняем куки со временем последнего захода
+            Response.Cookies.Append("LastLoggedInTime", DateTime.Now.ToString());
+
             return View(model);
         }
 
