@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @model CourseWorkWeb.ViewModels.ChangeRoleViewModel
-
+    <a class="btn btn-outline-secondary" asp-action="Index">Назад</a>
+<br />
 <h2>Изменение ролей для пользователя @Model.UserEmail</h2>
 
 <form asp-action="Edit" method="post">
@@ -12,6 +13,6 @@
                    @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
             }
     </div>
-    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <button type="submit" class="btn btn-outline-secondary">Сохранить</button>
 </form>
 

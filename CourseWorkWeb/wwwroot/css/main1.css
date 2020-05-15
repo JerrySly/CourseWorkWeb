@@ -1,33 +1,21 @@
 ﻿/*/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-.navbar {
-    background: #F97300;
+header {
+    background: #1C1C1C;
+    color: #fff
 }
-body, h1, h2 {
+
+body, h1, h2, a{
     font-family: 'Montserrat', sans-serif;
 }
-.nav-link, .navbar-brand {
-    color: #f4f4f4;
-    cursor: pointer;
+a {
+    color: #e5e5e5
 }
-
-.nav-link {
-    margin-right: 1em !important;
-}
-
-    .nav-link:hover {
-        background: #f4f4f4;
-        color: #f97300;
+    a:hover {
+        color: #A9A9A9; /* Цвет ссылки при наведении на нее курсора мыши */
+        text-decoration: underline; /* Добавляем подчеркивание */
     }
-
-.navbar-collapse {
-    justify-content: flex-end;
-}
-
-.navbar-toggler {
-    background: #fff !important;
-}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

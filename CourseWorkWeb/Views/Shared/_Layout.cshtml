@@ -1,45 +1,41 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CourseWorkWeb</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
-</head>
-<body>
-    <header>
-        <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
-                <h2 class="navbar-brand " >Фитнес в условии ЧС</h2>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="Home" asp-action="Index">Главная</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="Contact" asp-action="Index">Каталог упражнений</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="Technicians" asp-action="Index">
-                    Technicians
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="Account" asp-action="Login">Авторизация/Регистрация</a>
-            </li>
-        </ul>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <br />
-            @RenderBody()
-        </main>
-    </div>
+﻿
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>@ViewData["Title"] - CourseWorkWeb</title>
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="~/css/main1.css" />
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        </head>
+        <body>
+            <header>
+                <nav class="site-header sticky-top py-1">
+                    <div class="container d-flex flex-column flex-md-row justify-content-between">
+                        <a class="py-2" href="#" aria-label="Product">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Фитнес в условиях ЧС</title><circle cx="12" cy="12" r="10" /><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" /></svg>
+                            <a class="py-2 d-none d-md-inline-block" asp-controller="Home" asp-action="Index">Фитнес в условиях ЧС</a>
+                        </a>
+                        <a color="white" class="py-2 d-none d-md-inline-block" asp-controller="Home" asp-action="Contacts">Мы</a>
+                        <a color="white" class="py-2 d-none d-md-inline-block" asp-controller="Home" asp-action="Index">Каталог упражнений</a>
+                        <a class="py-2 d-none d-md-inline-block" asp-controller="Account" asp-action="Login">Вход</a>
+                        <a class="py-2 d-none d-md-inline-block" asp-controller="Account" asp-action="Register">Регистрация</a>
+                    </div>
+                </nav>
+            </header>
+            <div class="container">
+                <main role="main" class="pb-3">
+                    <br />
+                    @RenderBody()
+                </main>
+            </div>
 
-    
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
-</body>
-</html>
+
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            @RenderSection("Scripts", required: false)
+        </body>
+        </html>
+

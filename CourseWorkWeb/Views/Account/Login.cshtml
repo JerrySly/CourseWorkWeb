@@ -1,39 +1,26 @@
-﻿@*<body>
-        <link href="~/css/NewAuthorization.css" rel="stylesheet" />
-            <form class="form-signin" method="post">
-                <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
-                <label for="inputEmail" class="sr-only">Login</label>
-                <input name="Login" type="text" id="inputEmail" class="form-control" placeholder="Login" required="" autofocus="">
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                <br />
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                <br />
-                <h5><a id="reg" asp-controller="Authorization" asp-action="Registred">Регистрация...</a></h5>
-            </form>
-    </body>*@
+﻿
 @model CourseWorkWeb.ViewModels.LoginViewModel
-
 <h2>Вход в приложение</h2>
 <form method="post" asp-controller="Account" asp-action="Login"
       asp-route-returnUrl="@Model.ReturnUrl">
     <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
+    <div class="form-group">
+        <label asp-for="Email" for="exampleInputEmail1">Email address</label>
+        <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         <span asp-validation-for="Email"></span>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
+    <div class="form-group">
+        <label asp-for="Password" for="exampleInputPassword1">Password</label>
+        <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         <span asp-validation-for="Password"></span>
     </div>
-    <div>
-        <label asp-for="RememberMe"></label><br />
-        <input asp-for="RememberMe" />
+    <div class="form-check">
+        <input asp-for="RememberMe" type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label asp-for="RememberMe" class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <div>
-        <input type="submit" value="Войти" />
-    </div>
-    <a id="reg"  style="color:black;" asp-controller="Account" asp-action="Register">Регистрация...</a>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="btn btn-primary" id="reg" asp-controller="Account" asp-action="Register">Регистрация</a>
 </form>
+
+

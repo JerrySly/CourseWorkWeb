@@ -22,27 +22,27 @@
 <h2>Регистрация нового пользователя</h2>
 <form method="post" asp-controller="Account" asp-action="Register">
     <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
+    <div class="form-group">
+        <label asp-for="Email" for="exampleInputEmail1">Email address</label>
+        <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         <span asp-validation-for="Email"></span>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.(haha)</small>
     </div>
-    <div>
-        <label asp-for="Login"></label><br />
-        <input asp-for="Login" />
+    <div class="form-group">
+        <label asp-for="Login" for="exampleInputEmail1">Login</label>
+        <input asp-for="Login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         <span asp-validation-for="Login"></span>
     </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
+    <div class="form-group">
+        <label asp-for="Password" for="exampleInputPassword1">Password</label>
+        <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         <span asp-validation-for="Password"></span>
     </div>
-    <div>
-        <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
+    <div class="form-group">
+        <label asp-for="PasswordConfirm" for="exampleInputPassword1">Password Confirm</label>
+        <input asp-for="PasswordConfirm" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         <span asp-validation-for="PasswordConfirm"></span>
     </div>
-    <div>
-        <input type="submit" value="Регистрация" />
-    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+

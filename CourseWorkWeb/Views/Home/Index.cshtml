@@ -4,45 +4,47 @@
  @*пытаемся вызвать Вьюбэг.
 Он должен выводить время последнего захода пользователя, если не в первый раз авторизуется*@
 <h1>@ViewBag.Message</h1>
-@if (string.IsNullOrEmpty(TempData["LTLD"] as string))
-{
-    <p>First time?</p>
-}
-else
-{
-<p>Last Logged on @TempData["LTLD"]</p>
-}
-
-@if (User.Identity.IsAuthenticated)
-{
-    <p>Hello, @User.Identity.Name</p>
-
-    <form method="post" asp-controller="Account" asp-action="Logout">
-        <input type="submit" value="Выход" />
-    </form>
-    <a asp-controller="Home" asp-action="ReturnToLastCard" style="color:black;">
-        К последней карточке
-    </a>
-}
-else
-{
-    <a asp-controller="Account" asp-action="Login">Вход</a>
-    <a asp-controller="Account" asp-action="Register">Регистрация</a>
-}
+<style type="text/css">
+    .bgimg {
+        background-image: url('../pic/фон1.jpg');
+    }
+</style>
 <html>
 <body>
     <main role="main">
 
-        <section class="jumbotron text-center">
+        <section class="jumbotron text-center bgimg">
             <div class="container">
-                <h1>Album example</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-                <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                </p>
-            </div>
-        </section>
+                <h1>Добро пожаловать!</h1>
+                <p class="lead text-muted">
+                    @if (string.IsNullOrEmpty(TempData["LTLD"] as string))
+                    {
+                    <p class="lead text-muted">First time?</p>
+                }
+                else
+                {
+                    <p class="lead text-muted">Last Logged on @TempData["LTLD"]</p>
+                }
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                     <p><h3>Hello, @User.Identity.Name</h3></p>
+                        <form  method="post" asp-controller="Account" asp-action="Logout">
+                            <input class="btn btn-secondary my-2" type="submit" value="Выход">
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="btn btn-secondary my-2" asp-controller="Account" asp-action="Login">Вход</a>
+                        <a class="btn btn-secondary my-2" asp-controller="Account" asp-action="Register">Регистрация</a>
+                    }
+                    
+                    @*<p>
+                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    </p>*@
+                </div>
+            </section>
 
         <div class="album py-5 bg-light">
             <div class="container">
@@ -60,9 +62,8 @@ else
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <a href="~/Home/Show/@exercise.Id">
-                                                <button type="button" class="btn btn-secondary">View</button>
+                                                <button type="button" class="btn btn-secondary">Просмотр</button>
                                             </a>
-                                            <button type="button" class="btn btn-secondary">Edit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -72,8 +73,13 @@ else
                     }
                 </div>
             </div>
+            <center>
+                <a class="btn btn-primary my-2" asp-controller="Home" asp-action="ReturnToLastCard">
+                    К последней карточке
+                </a>
+            </center>
         </div>
-    </main>
+       </main>
 
     <footer class="text-muted">
         <div class="container">

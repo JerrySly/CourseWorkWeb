@@ -26,7 +26,11 @@ namespace CourseWorkWeb.Controllers
         {
             return View(db.Exercises.ToList());
         }
-        
+        public IActionResult Contacts()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Show(int? id)
         {   
