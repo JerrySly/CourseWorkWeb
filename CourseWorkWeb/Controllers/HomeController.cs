@@ -8,9 +8,11 @@ using Microsoft.Extensions.Logging;
 using CourseWorkWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Builder;
+using System.Threading;
 
 namespace CourseWorkWeb.Controllers
 {
+    
     public class HomeController : Controller
     {
         ApplicationContext db;
